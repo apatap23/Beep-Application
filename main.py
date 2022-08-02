@@ -2,16 +2,19 @@
 
 import random
 import time
-from playsound import playsound
+from pydub import AudioSegment
+from pydub.playback import play
 
 def pause():
-    playsound('/audio/pause.mp3') #verbal print("Stop!")
-    time.sleep(10)
+    sound = AudioSegment.from_mp3('./audio/pause.mp3') #verbal print("Stop!")
+    play(sound)
+    time.sleep(15)
 
 def detect_pause():
-    playsound('/audio/start.mp3') #vertbal print("Start Learning!")
+    sound = AudioSegment.from_mp3('./audio/start.mp3') #vertbal print("Start Learning!")
+    play(sound)
     timeCheck = random.randrange(120,240)
-    time.sleep(timeCheck)
+    time.sleep(timeCheck + 5)
     pause()
 
 def main():
