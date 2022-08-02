@@ -2,14 +2,14 @@
 
 import random
 import time
+from playsound import playsound
 
 def pause():
-    print("Stop!")
+    playsound('/audio/pause.mp3') #verbal print("Stop!")
     time.sleep(10)
-    #print("Continue")
 
 def detect_pause():
-    print("Start Learning!")
+    playsound('/audio/start.mp3') #vertbal print("Start Learning!")
     timeCheck = random.randrange(120,240)
     time.sleep(timeCheck)
     pause()
